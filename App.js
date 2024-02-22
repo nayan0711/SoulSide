@@ -1,13 +1,17 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import Login from './Screens/Login/Login'
-//import NavigationTabRoutes from './Screens/TabNavigation/NavigationTabRoutes'
+import React from 'react';
+import { View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import LoginStack from './Screens/StackNavigation/LoginStack';
+
 const App = () => {
+  
   return (
-    <View>
-      <Login/>
+    <View style={{ flex: 1 }}>
+      <NavigationContainer>
+        <LoginStack/>
+      </NavigationContainer>
     </View>
-  )
+  );
 }
 
-export default App
+export default App;

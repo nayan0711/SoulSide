@@ -17,8 +17,9 @@ const Tab = createMaterialTopTabNavigator();
 export default function App() {
   return (
     <View style={styles.container}>
-      <NavigationContainer>
+    
         <Tab.Navigator
+        initialRouteName="Home"
           screenOptions={{
             headerShown: false,
             tabBarInactiveTintColor: colors.themeColor,
@@ -26,63 +27,8 @@ export default function App() {
             transition: 'slide',
             tabBarIndicatorStyle: styles.tabIndicator
           }}
+          
           tabBarPosition='bottom'>
-          <Tab.Screen
-            name="WeekPrompt"
-            component={WeekPrompt}
-            options={{
-              tabBarIcon: ({ focused }) => (
-                <View style={[styles.tabIconContainer, focused && styles.focusedIcon]}>
-                  <Image
-                    source={ImagePath.Home}
-                    style={styles.tabIcon}
-                  />
-                </View>
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="Group"
-            component={Group}
-            options={{
-              tabBarIcon: ({ focused }) => (
-                <View style={[styles.tabIconContainer, focused && styles.focusedIcon]}>
-                  <Image
-                    source={ImagePath.Home}
-                    style={styles.tabIcon}
-                  />
-                </View>
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="Chat"
-            component={Chat}
-            options={{
-              tabBarIcon: ({ focused }) => (
-                <View style={[styles.tabIconContainer, focused && styles.focusedIcon]}>
-                  <Image
-                    source={ImagePath.Home}
-                    style={styles.tabIcon}
-                  />
-                </View>
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="Profile"
-            component={Profile}
-            options={{
-              tabBarIcon: ({ focused }) => (
-                <View style={[styles.tabIconContainer, focused && styles.focusedIcon]}>
-                  <Image
-                    source={ImagePath.Home}
-                    style={styles.tabIcon}
-                  />
-                </View>
-              ),
-            }}
-          />
           <Tab.Screen
             name="Home"
             component={HomeScreen}
@@ -97,8 +43,64 @@ export default function App() {
               ),
             }}
           />
+          <Tab.Screen
+            name="Week Prompt"
+            component={WeekPrompt}
+            options={{
+              tabBarIcon: ({ focused }) => (
+                <View style={[styles.tabIconContainer, focused && styles.focusedIcon]}>
+                  <Image
+                    source={ImagePath.Week_Prompt}
+                    style={styles.tabIcon}
+                  />
+                </View>
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Group"
+            component={Group}
+            options={{
+              tabBarIcon: ({ focused }) => (
+                <View style={[styles.tabIconContainer, focused && styles.focusedIcon]}>
+                  <Image
+                    source={ImagePath.Group}
+                    style={styles.tabIcon}
+                  />
+                </View>
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Chat"
+            component={Chat}
+            options={{
+              tabBarIcon: ({ focused }) => (
+                <View style={[styles.tabIconContainer, focused && styles.focusedIcon]}>
+                  <Image
+                    source={ImagePath.Chat}
+                    style={styles.tabIcon}
+                  />
+                </View>
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Profile"
+            component={Profile}
+            options={{
+              tabBarIcon: ({ focused }) => (
+                <View style={[styles.tabIconContainer, focused && styles.focusedIcon]}>
+                  <Image
+                    source={ImagePath.Profile}
+                    style={styles.tabIcon}
+                  />
+                </View>
+              ),
+            }}
+          />
         </Tab.Navigator>
-      </NavigationContainer>
+      
     </View>
   )
 }
@@ -115,14 +117,18 @@ const styles = StyleSheet.create({
     marginLeft: moderateScale(33.5),
     borderBottomLeftRadius: 50,
     borderBottomRightRadius: 50,
+  
   },
   tabIconContainer: {
     position: 'relative',
+    justifyContent:'center',
+    alignItems:'center'
   },
   focusedIcon: {
-    tintColor: colors.themeColor,
+    tintColor: colors.black,
   },
   tabIcon: {
-    tintColor: colors.black,
+    
+    tintColor: colors.themeColor,
   },
 });
