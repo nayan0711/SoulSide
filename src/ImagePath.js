@@ -11,5 +11,7 @@ const ImagePath = {
   Four: require('../assets/four.png'),
   About: require('../assets/about.png'),
   Write: require('../assets/write.png'),
+  Yoga: require('../assets/yoga.png'),
+  Chevron: require('../assets/chevronright.png')
 };
 export default ImagePath;

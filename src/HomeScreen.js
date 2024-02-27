@@ -232,6 +232,22 @@ export default function HomeScreen() {
             style={styles.btn}
           />
         </View>
+        <View style={styles.scoreContainer}>
+          <Text style={styles.mentalText}>Mental wellness checking</Text>
+        </View>
+        <View style={styles.borderBox}>
+          <Image source={ImagePath.Yoga} style={styles.yogaImage}></Image>
+          <View style={styles.insideText}>
+            <Text style={styles.boxText1}>Get your mental wellness score</Text>
+            <Text style={styles.boxText2}>
+              Get your mental wellness score for the week
+            </Text>
+            <Image source={ImagePath.Chevron} style={styles.rightImage}></Image>
+          </View>
+        </View>
+      </View>
+      <View style={styles.weekPrompt}>
+
       </View>
     </View>
   );
@@ -370,7 +386,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     right: 135,
-    bottom: 25,
+    bottom: 3,
   },
 
   lady: {
@@ -407,6 +423,64 @@ const styles = StyleSheet.create({
   topImage: {
     zIndex: 4,
   },
+  scoreContainer: {
+    left: 17,
+    top: 60,
+  },
+  mentalText: {
+    fontFamily: ' Inter',
+    fontWeight: '700',
+    fontSize: 20,
+    letterSpacing: 0,
+    textAlign: 'left',
+    color: '#4D4D4D',
+  },
+  borderBox: {
+    width: 380,
+    height: 84,
+    top: 90,
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: '#F8EFEF',
+    right: 4,
+  },
+  yogaImage: {
+    height: 80,
+    width: 69,
+  },
+  insideText: {
+    left: 74,
+    bottom: 70,
+    width: 270,
+  },
+  boxText1: {
+    fontFamily: 'Inter',
+    fontWeight: '700',
+    fontSize: 16,
+    color: '#333333',
+  },
+  boxText2: {
+    fontFamily: 'Inter',
+    fontWeight: '500',
+    fontSize: 15,
+    color: '#666666',
+  },
+  rightImage: {
+    left: 276,
+    bottom: 43,
+    height: 30,
+  },
+  weekPrompt: {
+    
+      width: 375,
+      height: 141,
+      backgroundColor: '#55A06F',
+      borderRadius: 20,
+      marginLeft: 19,
+      
+
+  },
+
 });
 
 export {HomeScreen};
