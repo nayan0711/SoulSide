@@ -19,7 +19,7 @@ const inputStyles = StyleSheet.create({
       paddingHorizontal: moderateScale(16),
       fontFamily: 'Inter',
       fontWeight: '500',
-      fontSize: scale(16),
+      fontSize: scale(15),
       color: '#333333',
   },
   rightIconContainer: {

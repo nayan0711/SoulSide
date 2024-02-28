@@ -44,6 +44,9 @@ const Login = () => {
           await AsyncStorage.setItem('token', response.data.token);
           console.log('Login Successful');
           console.log(response.data.token);
+          // setEmail('')
+          // setPass('')
+          // console.log(email+""+pass)
           navigation.navigate('Main');
         } else {
           Alert.alert('Error', 'Invalid email or password');
