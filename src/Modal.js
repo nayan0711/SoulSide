@@ -71,10 +71,9 @@ const ModalComponent = ({
                 <Btn
                   label="Let's Do It"
                   onPress={() => {
-                  console.log('Lets Do It')
-                    
+                    console.log('Lets Do It');
                   }}
-                style={letsBtntxtStyle}
+                  style={letsBtntxtStyle}
                 />
               )}
             </View>

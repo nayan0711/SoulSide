@@ -1,5 +1,14 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  SafeAreaView,
+  Share,
+} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import ImagePath from './ImagePath';
 import Btn from './Btn';
@@ -19,6 +28,25 @@ export default function HomeScreen() {
 
   const toggleGroupModal = () => {
     setIsGroupModalVisible(!isGroupModalVisible);
+  };
+  const handleShare = async () => {
+    try {
+      const result = await Share.share({
+        message: 'Your share message goes here',
+        url: 'https://example.com',
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          console.log('Shared successfully');
+        } else {
+          console.log('Shared');
+        }
+      } else if (result.action === Share.dismissedAction) {
+        console.log('Dismissed');
+      }
+    } catch (error) {
+      console.error('Error sharing:', error.message);
+    }
   };
 
   const modalaboutContainer = {
@@ -120,136 +148,191 @@ export default function HomeScreen() {
   };
 
   return (
-    <View>
-      <View style={styles.container}>
-        <View style={styles.TopContainer}>
-          <Text style={styles.momText}>Power Moms</Text>
-          <TouchableOpacity onPress={toggleModal}>
-            <Image source={ImagePath.formkit} style={styles.imageformkit} />
-          </TouchableOpacity>
-          {isModalVisible && (
-            <ModalComponent
-              line={ImagePath.Line}
-              write={ImagePath.About}
-              about={ImagePath.Write}
-              text1={'About Us'}
-              text2={'Write to Us'}
-              modalaboutContainer={modalaboutContainer}
-              txtStyle1={txtStyle1}
-              txtStyle2={txtStyle2}
-              modalContainer={modalContainer}
-              rectangle={rectangle}
-              toggleModal={toggleModal}
-              lineImage={lineImage}
-              aboutImage={aboutImage}
-              writeImage={writeImage}
-            />
-          )}
+    <SafeAreaView style={{flex: 1}}>
+      <ScrollView>
+        <View style={styles.container}>
+          <View style={styles.TopContainer}>
+            <Text style={styles.momText}>Power Moms</Text>
+            <TouchableOpacity onPress={toggleModal}>
+              <Image source={ImagePath.formkit} style={styles.imageformkit} />
+            </TouchableOpacity>
+            {isModalVisible && (
+              <ModalComponent
+                line={ImagePath.Line}
+                write={ImagePath.About}
+                about={ImagePath.Write}
+                text1={'About Us'}
+                text2={'Write to Us'}
+                modalaboutContainer={modalaboutContainer}
+                txtStyle1={txtStyle1}
+                txtStyle2={txtStyle2}
+                modalContainer={modalContainer}
+                rectangle={rectangle}
+                toggleModal={toggleModal}
+                lineImage={lineImage}
+                aboutImage={aboutImage}
+                writeImage={writeImage}
+              />
+            )}
+          </View>
+          <View style={styles.midContainer}>
+            <Text style={styles.greetingText}>Good Afternoon,</Text>
+            <Text style={styles.nameText}>Sarina!</Text>
+          </View>
         </View>
-        <View style={styles.midContainer}>
-          <Text style={styles.greetingText}>Good Afternoon,</Text>
-          <Text style={styles.nameText}>Sarina!</Text>
-        </View>
-      </View>
-      <Text style={styles.upcomingcontainer}>Upcoming Session</Text>
-      <View style={styles.bgRectangle}>
-        <View style={styles.bgText}>
-          <Text style={styles.bgText1}>
-            Thursday
-            <LinearGradient colors={['#333333', '#333333']}></LinearGradient>
-          </Text>
+        <Text style={styles.upcomingcontainer}>Upcoming Session</Text>
+        <View style={styles.bgRectangle}>
+          <View style={styles.bgText}>
+            <Text style={styles.bgText1}>
+              Thursday
+              <LinearGradient colors={['#333333', '#333333']}></LinearGradient>
+            </Text>
 
-          <View style={styles.liveTag}>
-            <Image source={ImagePath.Tag} style={styles.imageTag} />
-            <View style={styles.iImage}>
-              <TouchableOpacity onPress={toggleGroupModal}>
-                <Image source={ImagePath.Group} style={styles.imageGroup} />
-              </TouchableOpacity>
-              {isGroupModalVisible && (
-                <ModalComponent
-                  text3={'Thursday-Upcoming Session'}
-                  text4={
-                    'The session link appears here 15 minutes before the session starts. Meanwhile, fill out the Mood Questionnaire and get your Mental Wellness Score now.'
-                  }
-                  txtStyle3={txtStyle3}
-                  txtStyle4={txtStyle4}
-                  bgTxt={bgTxt}
-                  contentTxt={contentTxt}
-                  toggleModal={toggleGroupModal}
-                  modalContainer={modalContainer}
-                  bigRectangle={bigRectangle}
-                  line={ImagePath.Line}
-                  lineImage={lineImage}
-                  letsButton={true}
-                  letsButtonStyle={{top: 80, left: 0}}
-                  letsBtntxtStyle={{textColor: '#304F6D'}}
-                />
-              )}
+            <View style={styles.liveTag}>
+              <Image source={ImagePath.Tag} style={styles.imageTag} />
+              <View style={styles.iImage}>
+                <TouchableOpacity onPress={toggleGroupModal}>
+                  <Image source={ImagePath.Group} style={styles.imageGroup} />
+                </TouchableOpacity>
+                {isGroupModalVisible && (
+                  <ModalComponent
+                    text3={'Thursday-Upcoming Session'}
+                    text4={
+                      'The session link appears here 15 minutes before the session starts. Meanwhile, fill out the Mood Questionnaire and get your Mental Wellness Score now.'
+                    }
+                    txtStyle3={txtStyle3}
+                    txtStyle4={txtStyle4}
+                    bgTxt={bgTxt}
+                    contentTxt={contentTxt}
+                    toggleModal={toggleGroupModal}
+                    modalContainer={modalContainer}
+                    bigRectangle={bigRectangle}
+                    line={ImagePath.Line}
+                    lineImage={lineImage}
+                    letsButton={true}
+                    letsButtonStyle={{top: 80, left: 0}}
+                    letsBtntxtStyle={{textColor: '#304F6D'}}
+                  />
+                )}
+              </View>
+            </View>
+          </View>
+          <View style={styles.bgdate}>
+            <Text style={styles.bgText2}>
+              Oct 7th, 2023, 10:00 pm ET
+              <LinearGradient colors={['#333333', '#333334']}></LinearGradient>
+            </Text>
+            <Text style={styles.bgText3}>6 going</Text>
+            <View style={styles.profiles}>
+              <Image
+                source={ImagePath.One}
+                style={[styles.images, styles.bottomImage]}
+              />
+              <Image
+                source={ImagePath.Two}
+                style={[styles.images, styles.secondImage]}
+              />
+              <Image
+                source={ImagePath.Three}
+                style={[styles.images, styles.thirdImage]}
+              />
+              <Image
+                source={ImagePath.Four}
+                style={[styles.images, styles.topImage]}
+              />
+            </View>
+
+            <Text style={styles.bgText4}>By Aimée Williams</Text>
+            <Image source={ImagePath.lady} style={styles.lady} />
+          </View>
+
+          <View style={styles.btnContainer}>
+            <Btn
+              label="Add to Calendar"
+              onPress={handlePress}
+              textColor={'#304F6D'}
+              style={styles.btn}
+            />
+            <Btn
+              label="Mark RSVP"
+              onPress={handlePress}
+              backgroundColor="#304F6D"
+              textColor="#FFFFFF"
+              style={styles.btn}
+            />
+          </View>
+          <View style={styles.scoreContainer}>
+            <Text style={styles.mentalText}>Mental wellness checking</Text>
+          </View>
+          <View style={styles.borderBox}>
+            <Image source={ImagePath.Yoga} style={styles.yogaImage}></Image>
+            <View style={styles.insideText}>
+              <Text style={styles.boxText1}>
+                Get your mental wellness score
+              </Text>
+              <Text style={styles.boxText2}>
+                Get your mental wellness score for the week
+              </Text>
+              <Image
+                source={ImagePath.Chevron}
+                style={styles.rightImage}></Image>
             </View>
           </View>
         </View>
-        <View style={styles.bgdate}>
-          <Text style={styles.bgText2}>
-            Oct 7th, 2023, 10:00 pm ET
-            <LinearGradient colors={['#333333', '#333334']}></LinearGradient>
+        <View style={styles.weekPrompt}>
+          <Image
+            source={ImagePath.Calendar}
+            style={styles.CalendarImage}></Image>
+          <Text style={styles.weekText1}>This Week’s Prompt</Text>
+          <Text style={styles.weekText2}>
+            “What do you need when you are having a hard day? ”
           </Text>
-          <Text style={styles.bgText3}>6 going</Text>
-          <View style={styles.profiles}>
-            <Image
-              source={ImagePath.One}
-              style={[styles.images, styles.bottomImage]}
-            />
-            <Image
-              source={ImagePath.Two}
-              style={[styles.images, styles.secondImage]}
-            />
-            <Image
-              source={ImagePath.Three}
-              style={[styles.images, styles.thirdImage]}
-            />
-            <Image
-              source={ImagePath.Four}
-              style={[styles.images, styles.topImage]}
-            />
+          <Text style={styles.weekText3}>Check Now</Text>
+          <Image
+            source={ImagePath.ChevronWhite}
+            style={styles.chevronRight}></Image>
+          <View style={styles.rotationContainer}>
+            <View style={styles.rotationRectangle}></View>
           </View>
-
-          <Text style={styles.bgText4}>By Aimée Williams</Text>
-          <Image source={ImagePath.lady} style={styles.lady} />
         </View>
-
-        <View style={styles.btnContainer}>
-          <Btn
-            label="Add to Calendar"
-            onPress={handlePress}
-            textColor={'#304F6D'}
-            style={styles.btn}
-          />
-          <Btn
-            label="Mark RSVP"
-            onPress={handlePress}
-            backgroundColor="#304F6D"
-            textColor="#FFFFFF"
-            style={styles.btn}
-          />
+        <View style={styles.meetContainer}>
+          <Text style={styles.meetText}>Meet Your Group</Text>
+          <Text style={styles.viewText}>View All</Text>
+          <Image
+            source={ImagePath.ChevronBlue}
+            style={styles.chevronBlue}></Image>
         </View>
-        <View style={styles.scoreContainer}>
-          <Text style={styles.mentalText}>Mental wellness checking</Text>
-        </View>
-        <View style={styles.borderBox}>
-          <Image source={ImagePath.Yoga} style={styles.yogaImage}></Image>
-          <View style={styles.insideText}>
-            <Text style={styles.boxText1}>Get your mental wellness score</Text>
-            <Text style={styles.boxText2}>
-              Get your mental wellness score for the week
+        <View style={styles.heightContainer}>
+          <ScrollView horizontal={true}>
+            <View style={styles.profileBox}>
+              <Image source={ImagePath.FrameOne} style={styles.frame}></Image>
+              <Image source={ImagePath.FrameTwo} style={styles.frame}></Image>
+              <Image source={ImagePath.FrameThree} style={styles.frame}></Image>
+              <Image source={ImagePath.FrameFour} style={styles.frame}></Image>
+              <Image source={ImagePath.FrameFive} style={styles.frame}></Image>
+              <Image source={ImagePath.FrameSix} style={styles.frame}></Image>
+            </View>
+          </ScrollView>
+          <View style={styles.friendRectangle}>
+            <Text style={styles.referText}>Refer A Friend</Text>
+            <Text style={styles.shareText}>
+              Share the support you've found here with friends and strengthen
+              our community together.
             </Text>
-            <Image source={ImagePath.Chevron} style={styles.rightImage}></Image>
+            <View style={styles.shareBtn}>
+              <Btn
+                label="Share Link"
+                onPress={handleShare}
+                textColor={'#304F6D'}
+                style={styles.shareBtnStyle}
+              />
+            </View>
+            <Image source={ImagePath.Share} style={styles.shareIcon}></Image>
+            <Image source={ImagePath.Tree} style={styles.treeImage}></Image>
           </View>
         </View>
-      </View>
-      <View style={styles.weekPrompt}>
-
-      </View>
-    </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -471,16 +554,161 @@ const styles = StyleSheet.create({
     height: 30,
   },
   weekPrompt: {
-    
-      width: 375,
-      height: 141,
-      backgroundColor: '#55A06F',
-      borderRadius: 20,
-      marginLeft: 19,
-      
-
+    width: 381,
+    height: 141,
+    backgroundColor: '#4D4D4D',
+    borderRadius: 20,
+    marginLeft: 16,
+    position: 'relative',
+  },
+  CalendarImage: {
+    left: 264,
+    height: 90,
+    width: 90,
+    top: 20,
+  },
+  weekText1: {
+    fontFamily: 'Inter',
+    fontWeight: '700',
+    fontSize: 24,
+    color: '#FFFFFF',
+    left: 17,
+    bottom: 70,
+  },
+  weekText2: {
+    fontFamily: 'Inter',
+    fontWeight: '500',
+    fontSize: 14,
+    color: '#FFFFFF',
+    opacity: 90,
+    left: 19,
+    width: 188,
+    bottom: 66,
+    lineHeight: 22,
+  },
+  weekText3: {
+    fontWeight: '700',
+    fontSize: 16,
+    lineHeight: 17,
+    color: '#FFFFFF',
+    fontFamily: 'Inter',
+    width: 88,
+    bottom: 56,
+    left: 19,
+  },
+  chevronRight: {
+    bottom: 74,
+    left: 103,
+    height: 19,
+  },
+  rotationContainer: {
+    position: 'absolute',
+    width: 193.5,
+    height: 78,
+    left: 237,
+    top: 75,
+    transform: [{rotate: '-51.44deg'}],
   },
 
+  rotationRectangle: {
+    width: 130,
+    height: 120,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    borderTopEndRadius: 150,
+  },
+
+  meetContainer: {
+    top: 20,
+    height: 70,
+    left: 20,
+  },
+  meetText: {
+    color: '#4D4D4D',
+    fontFamily: 'Inter',
+    fontWeight: '800',
+    fontSize: 18,
+    height: 80,
+    // flex: 0,
+  },
+  viewText: {
+    // flex: 1,
+    fontFamily: 'Inter',
+    fontWeight: '600',
+    fontSize: 16,
+    color: '#304F6D',
+    bottom: 76,
+    left: 300,
+  },
+  chevronBlue: {
+    height: 18,
+    width: 16,
+    bottom: 95,
+    left: 360,
+  },
+  profileBox: {
+    width: 430,
+    height: 124,
+    bottom: 0,
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: '#F8EFEF',
+    left: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  frame: {
+    top: 10,
+    height: 100,
+    width: 60,
+    left: 17,
+  },
+  heightContainer: {
+    height: 460,
+  },
+
+  friendRectangle: {
+    width: 379,
+    height: 199,
+    backgroundColor: '#FEF3E7',
+    borderRadius: 10,
+    marginLeft: 17,
+    bottom: 115,
+  },
+  referText: {
+    color: '#304F6D',
+    fontFamily: 'Inter',
+    fontWeight: '700',
+    fontSize: 18,
+    left: 19,
+    top: 15,
+  },
+  shareText: {
+    color: '#646464',
+    fontFamily: 'Inter',
+    fontWeight: '400',
+    fontSize: 14,
+    left: 17,
+    top: 25,
+    width: 209,
+    lineHeight: 19,
+  },
+  shareBtn: {
+    top: 45,
+    right: 121,
+  },
+  shareBtnStyle: {},
+  shareIcon: {
+    height: 17,
+    width: 16,
+    top: 23,
+    left: 27,
+  },
+  treeImage: {
+    width: 140,
+    height: 118,
+    left: 210,
+    bottom: 100,
+  },
 });
 
 export {HomeScreen};
