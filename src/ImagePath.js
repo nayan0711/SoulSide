@@ -12,6 +12,19 @@ const ImagePath = {
   About: require('../assets/about.png'),
   Write: require('../assets/write.png'),
   Yoga: require('../assets/yoga.png'),
-  Chevron: require('../assets/chevronright.png')
+  Chevron: require('../assets/chevronright.png'),
+  Calendar: require('../assets/calendar.png'),
+  ChevronWhite: require('../assets/chevronrightwhite.png'),
+  ChevronBlue: require('../assets/bluechevron.png'),
+  FrameOne: require('../assets/Frame1.png'),
+  FrameTwo: require('../assets/Frame2.png'),
+  FrameThree: require('../assets/Frame3.png'),
+  FrameFour: require('../assets/Frame4.png'),
+  FrameFive: require('../assets/Frame5.png'),
+  FrameSix: require('../assets/Frame6.png'),
+  Share: require('../assets/share.png'),
+  Tree: require('../assets/treeImage.png'),
+
+
 };
 export default ImagePath;
