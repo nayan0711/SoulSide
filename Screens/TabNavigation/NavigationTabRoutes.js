@@ -4,13 +4,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../HomeScreen';
 import WeekPrompt from '../WeekPrompt';
-import Group from '../Group';
+import Group from '../group/Group';
 import Chat from '../Chat';
 import Profile from '../Profile';
 import { moderateScale } from 'react-native-size-matters';
 import ImagePath from '../Constants/ImagePath'
 import colors from '../Constants/colors'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import GroupStack from '../StackNavigation/GroupStack';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -59,7 +60,7 @@ export default function App() {
           />
           <Tab.Screen
             name="Group"
-            component={Group}
+            component={GroupStack}
             options={{
               tabBarIcon: ({ focused }) => (
                 <View style={[styles.tabIconContainer, focused && styles.focusedIcon]}>

@@ -14,6 +14,7 @@ const ImagePath= {
     chevronRight:require('../../Assets/chevronright.png'),
     facilitatorProfile:require('../../Assets/facilitatorProfile.png'),
     vector:require('../../Assets/Vector.png'),
+    backBtn:require('../../Assets/backBtn.png'),
     //
   smile: require('../../Assets/smiling_face.png'),
   Line: require('../../Assets/Line.png'),

@@ -32,9 +32,9 @@ const WeekPrompt = () => {
 
  return (
   <View style={styles.container}>
-  <View style={styles.titleContainer}>
+  <Animated.View style={[styles.titleContainer, { transform: [{ translateX: animationValue2 }] }]}>
     <Text style={styles.title}>Welcome back, Sarina!</Text>
-  </View>
+  </Animated.View>
   <Animated.View>
     <View style={styles.subtitleContainer}>
       <Animated.Text style={[styles.subtitle, { transform: [{ translateX: animationValue1 }] }]}>
