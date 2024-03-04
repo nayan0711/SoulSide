@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, Alert } from 'react-native';
-import CustomBtn from './Components/CustomBtn/CustomBtn';
+import CustomBtn from './components/CustomBtn/CustomBtn';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import ImagePath from './Constants/ImagePath';
 import colors from './Constants/colors';
 import { moderateScale, scale } from 'react-native-size-matters';
-import TextInputWithLabel from './Components/TextInputwithLabel/TextInputwithLabel';
+import TextInputWithLabel from './components/TextInputwithLabel/TextInputwithLabel';
 import { ScrollView } from 'react-native-gesture-handler';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 //import { useSafeAreaFrame } from 'react-native-safe-area-context';

@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import { Alert, Image, Text, View, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import InputField from '../Components/CustomInputField/InputField';
-import CustomBtn from '../Components/CustomBtn/CustomBtn';
+import InputField from '../components/CustomInputField/InputField';
+import CustomBtn from '../components/CustomBtn/CustomBtn';
 import styles from './styles';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
