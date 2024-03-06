@@ -2,7 +2,7 @@ import { Text, View } from 'react-native';
 import React from 'react';
 import { styles } from './styles';
 import { moderateScale } from 'react-native-size-matters';
-import colors from '../../Constants/colors';
+import colors from '../../constants/colors';
 
 export default function PromptSection() {
   const values = [

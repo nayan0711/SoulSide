@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View,TouchableOpacity,Image } from 'react-native'
 import React from 'react'
-import colors from '../Constants/colors'
-import ImagePath from '../Constants/ImagePath'
+import colors from '../constants/colors'
+import ImagePath from '../constants/ImagePath'
 import { moderateScale } from 'react-native-size-matters'
 import { useNavigation } from '@react-navigation/native'
 

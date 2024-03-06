@@ -2,13 +2,13 @@
 import React, { useState } from 'react';
 import { Alert, Image, Text, View, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import InputField from '../components/CustomInputField/InputField';
-import CustomBtn from '../components/CustomBtn/CustomBtn';
-import styles from './styles';
+import InputField from '../components/customInputField/InputField';
+import CustomBtn from '../components/customBtn/CustomBtn';
+import styles from './Styles';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
-import ImagePath from '../Constants/ImagePath';
+import ImagePath from '../constants/ImagePath';
 
 const YOUR_API_ENDPOINT = 'https://reqres.in/api/login';
 

@@ -1,8 +1,8 @@
 import { View, Text, Image, StyleSheet } from 'react-native'
 import React from 'react'
-import colors from '../Constants/colors'
+import colors from '../constants/colors'
 import { moderateScale, scale } from 'react-native-size-matters'
-import ImagePath from '../Constants/ImagePath'
+import ImagePath from '../constants/ImagePath'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
 
@@ -11,46 +11,46 @@ const Group = () => {
   const imageData = [
     {
       id:1,
-      image: require('../../Assets/Frame1.png')
+      image: require('../../assets/Frame1.png')
     },
     {
       id:2,
-      image: require('../../Assets/Frame2.png'),
+      image: require('../../assets/Frame2.png'),
     },
     {
       id:3,
-      image: require('../../Assets/Frame3.png'),
+      image: require('../../assets/Frame3.png'),
     },
     {
       id:4,
-      image: require('../../Assets/Frame4.png'),
+      image: require('../../assets/Frame4.png'),
     },
     {
       id:5,
-      image: require('../../Assets/Frame5.png'),
+      image: require('../../assets/Frame5.png'),
     },
     {
       id:6,
-      image: require('../../Assets/Frame6.png'),
+      image: require('../../assets/Frame6.png'),
     },
     {
       id:7,
-      image: require('../../Assets/Frame6.png'),
+      image: require('../../assets/Frame6.png'),
     }, {
       id:8,
-      image: require('../../Assets/Frame6.png'),
+      image: require('../../assets/Frame6.png'),
     }, {
       id:9,
-      image: require('../../Assets/Frame6.png'),
+      image: require('../../assets/Frame6.png'),
     }, {
       id:10,
-      image: require('../../Assets/Frame6.png'),
+      image: require('../../assets/Frame6.png'),
     }, {
       id:11,
-      image: require('../../Assets/Frame6.png'),
+      image: require('../../assets/Frame6.png'),
     }, {
       id:12,
-      image: require('../../Assets/Frame6.png'),
+      image: require('../../assets/Frame6.png'),
     },
   ]
   return (
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     
-    marginTop: moderateScale(5),
+    //marginTop: moderateScale(5),
   },
   meetYourGroup: {
     marginHorizontal: moderateScale(16),
@@ -225,18 +225,20 @@ const styles = StyleSheet.create({
   },
   imageGroupContainer: {
     borderWidth: moderateScale(2.2),
-    //padding: moderateScale(12),
-    borderRadius: moderateScale(12),
-    borderColor: '#F8EFEF',
-    height:moderateScale(100),
-    marginTop: moderateScale(5),
-    flexDirection:'row'
+  borderRadius: moderateScale(12),
+  borderColor: '#F8EFEF',
+  height: moderateScale(110),
+  marginTop: moderateScale(5),
+  flexDirection: 'row',
+  justifyContent: 'flex-start', 
+  alignItems: 'center',
+  overflow: 'hidden',
   },
   groupImage: {
     borderRadius: moderateScale(12),
-    marginHorizontal:moderateScale(4),
-    height:90,
-    width:50,
+    marginHorizontal: moderateScale(4),
+    height: moderateScale(90),
+    width: moderateScale(60),
   },
   bottomContainer: {
     flex: 1,

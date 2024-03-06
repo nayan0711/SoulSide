@@ -10,10 +10,10 @@ import {
   Share,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import ImagePath from './Constants/ImagePath';
+import ImagePath from './constants/ImagePath';
 import Btn from './components/btn/Btn';
 import ModalComponent from './components/modal/ModalComponent';
-import colors from './Constants/colors';
+import colors from './constants/colors';
 
 export default function HomeScreen() {
   const handlePress = () => {

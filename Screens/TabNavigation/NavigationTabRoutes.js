@@ -8,11 +8,11 @@ import Group from '../group/Group';
 import Chat from '../Chat';
 import Profile from '../Profile';
 import { moderateScale } from 'react-native-size-matters';
-import ImagePath from '../Constants/ImagePath'
-import colors from '../Constants/colors'
+import ImagePath from '../constants/ImagePath'
+import colors from '../constants/colors'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import GroupStack from '../StackNavigation/GroupStack';
-import ChatStack from '../StackNavigation/ChatStack';
+import GroupStack from '../stackNavigation/GroupStack';
+import ChatStack from '../stackNavigation/ChatStack';
 
 const Tab = createMaterialTopTabNavigator();
 

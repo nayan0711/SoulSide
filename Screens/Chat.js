@@ -1,7 +1,7 @@
 import { View, Text, Image, StyleSheet } from 'react-native'
 import React from 'react'
-import colors from './Constants/colors'
-import ImagePath from './Constants/ImagePath'
+import colors from './constants/colors'
+import ImagePath from './constants/ImagePath'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
 

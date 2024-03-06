@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import LoginStack from './Screens/StackNavigation/LoginStack';
+import LoginStack from './Screens/stackNavigation/LoginStack';
 
 const App = () => {
   

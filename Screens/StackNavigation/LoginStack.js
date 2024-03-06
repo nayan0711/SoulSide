@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { ActivityIndicator, View, ImageBackground } from 'react-native';
-import Login from '../Login/Login';
-import NavigationTabRoutes from '../TabNavigation/NavigationTabRoutes';
+import Login from '../login/Login';
+import NavigationTabRoutes from '../tabNavigation/NavigationTabRoutes';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import ImagePath from '../Constants/ImagePath';
+import ImagePath from '../constants/ImagePath';
 
 const Stack = createStackNavigator();
 
@@ -35,7 +35,7 @@ const LoginStack = () => {
 
     const splashTimeout = setTimeout(() => {
       setShowSplash(false);
-    }, 500);
+    }, 1500);
 
     return () => clearTimeout(splashTimeout);
   }, []);

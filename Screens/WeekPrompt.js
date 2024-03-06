@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { View, Text, StyleSheet, Animated } from 'react-native';
-import colors from './Constants/colors';
+import colors from './constants/colors';
 import { moderateScale, scale } from 'react-native-size-matters';
 import PromptSection from './components/promptSection/promptSection';
 import PromptSection2 from './components/promptSection2/promptSection2';

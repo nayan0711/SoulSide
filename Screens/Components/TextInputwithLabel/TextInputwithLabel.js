@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
 import { scale, moderateVerticalScale, moderateScale } from 'react-native-size-matters';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
-import colors from '../../Constants/colors';
+import colors from '../../constants/colors';
 
 export default function TextInputWithLabel({ 
   label,
