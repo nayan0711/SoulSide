@@ -5,6 +5,7 @@ import { moderateScale, scale } from 'react-native-size-matters';
 import PromptSection from './components/promptSection/promptSection';
 import PromptSection2 from './components/promptSection2/promptSection2';
 import { useFocusEffect } from '@react-navigation/native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const WeekPrompt = () => {
   const [animationValue1] = useState(new Animated.Value(500));
@@ -31,14 +32,14 @@ const WeekPrompt = () => {
   );
 
  return (
-  <View style={styles.container}>
+  <ScrollView style={styles.container}>
   <Animated.View style={[styles.titleContainer, { transform: [{ translateX: animationValue2 }] }]}>
     <Text style={styles.title}>Welcome back, Sarina!</Text>
   </Animated.View>
   <Animated.View>
     <View style={styles.subtitleContainer}>
       <Animated.Text style={[styles.subtitle, { transform: [{ translateX: animationValue1 }] }]}>
-        What do you need when you are having a hard day?
+       " What do you need when you are having a hard day? "
       </Animated.Text>
     </View>
   </Animated.View>
@@ -49,14 +50,15 @@ const WeekPrompt = () => {
   <PromptSection />
   </Animated.View>
   
-  <Animated.View style={[styles.sectionContainer, { transform: [{ translateX: animationValue2 }] }]}>
+  <Animated.View style={[styles.sectionContainer2, { transform: [{ translateX: animationValue2 }] }]}>
     <Text style={styles.heading}>Some Example</Text>
   </Animated.View>
+
   <Animated.View style={[styles.sectionContainer, { transform: [{ translateX: animationValue1 }] }]}>
   <PromptSection2 />
   </Animated.View>
   
-</View>
+</ScrollView>
  );
 };
 
@@ -86,7 +88,7 @@ const styles = StyleSheet.create({
     lineHeight: moderateScale(24),
  },
  heading: {
-    fontSize: scale(16),
+    fontSize: scale(18),
     lineHeight: moderateScale(22.4),
     color: colors.grey,
     fontWeight: '700',
@@ -94,8 +96,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter',
  },
  sectionContainer: {
-    marginTop: moderateScale(14),
+    marginTop: moderateScale(4),
  },
+ sectionContainer2:{
+  marginTop:moderateScale(18),
+ }
 });
 
 export default WeekPrompt;

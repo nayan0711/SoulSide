@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, Linking } from 'react-native'
 import React from 'react'
 import ImagePath from '../Constants/ImagePath'
 import colors from '../Constants/colors'
@@ -7,14 +7,14 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useNavigation } from '@react-navigation/native'
 
 const GroupGuidlines = () => {
+    const email=`care@getsoulside.com`
+    const handleEmail = () => {
+        Linking.openURL(`mailto:${email}`)
+            .catch((err) => console.error('Error opening email app:', err));
+    };
+    
     const navigation=useNavigation();
-    const guidlines = [
-   {
-        text: ' • Do not talk negatively about members on chat or in group.'
-    }
-
-    ]
-
+    
     return (
         <View style={styles.container}>
         <View style={styles.header}>
@@ -56,6 +56,10 @@ const GroupGuidlines = () => {
                 </Text>
             </View>
         </View>
+
+        <View style={styles.bottomContainer}>
+                <Text style={styles.bottomText} onPress={()=>handleEmail()}>If you have feedback or concerns, you can reach out directly to <Text style={styles.emailText}>{email}</Text>.</Text>
+            </View>
     </View>
     )
 
@@ -74,43 +78,72 @@ const styles = StyleSheet.create({
         marginTop:moderateScale(18),
     },
     backBtn:{
-        marginLeft:moderateScale(15)
+        height:24,
+        marginTop:8,
+        marginLeft:moderateScale(14),
+        justifyContent:'center',
+        alignItems:'center'
     },
     titleContainer: {
         flex: 1,
         justifyContent: 'center',
+        alignItems:'center'
     },
     title: {
-        fontSize: moderateScale(18),
+        color:colors.black,
+        fontSize: moderateScale(22),
         fontWeight: '600',
         textAlign: 'center',
+        marginRight:moderateScale(26)
     },
     introTextContainer: {
         marginHorizontal: moderateScale(14),
         marginTop: moderateScale(10),
     },
     introText: {
-        fontSize: scale(12),
+        fontSize: scale(16),
         color: colors.black,
     },
     guidelinesContainer: {
-        borderWidth: moderateScale(1),
+        borderWidth: moderateScale(2),
         borderRadius: moderateScale(8),
         marginRight: moderateScale(14),
         marginLeft:moderateScale(12),
+        borderColor:colors.yellowBorder,
         paddingHorizontal: moderateScale(18),
         paddingVertical: moderateScale(14),
-        marginTop: moderateScale(10),
+        marginTop: moderateScale(12),
     },
     guidelineItem: {
         flexDirection: 'row',
         marginVertical: moderateScale(4),
     },
     bulletPoint: {
-        marginRight: moderateScale(5),
+        marginRight: moderateScale(2),
     },
     guidelineText: {
-        fontSize: scale(12),
-        fontWeight:'600'
+        fontSize: scale(14),
+        fontWeight:'600',
+        marginRight:moderateScale(12),
+    },
+    bottomContainer: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        backgroundColor: colors.yellow,
+        paddingBottom: 20,
+        height: moderateScale(24),
+        marginTop: moderateScale(70),
+    },
+    bottomText: {
+        fontSize: 16,
+        fontWeight: '600',
+        textAlign: 'center',
+        marginHorizontal: 14,
+    },
+    emailText: {
+        fontWeight: '900',
+        fontSize: moderateScale(17),
+        textDecorationLine: 'underline',
     },
 })

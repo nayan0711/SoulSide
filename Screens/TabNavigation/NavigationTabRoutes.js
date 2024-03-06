@@ -12,6 +12,7 @@ import ImagePath from '../Constants/ImagePath'
 import colors from '../Constants/colors'
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import GroupStack from '../StackNavigation/GroupStack';
+import ChatStack from '../StackNavigation/ChatStack';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -74,7 +75,7 @@ export default function App() {
           />
           <Tab.Screen
             name="Chat"
-            component={Chat}
+            component={ChatStack}
             options={{
               tabBarIcon: ({ focused }) => (
                 <View style={[styles.tabIconContainer, focused && styles.focusedIcon]}>

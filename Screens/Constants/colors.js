@@ -5,5 +5,7 @@ export default{
     blackOpacity80:'rgba(0,0,0,0.8)',  
     white:'#FFFFFF',
     grey:'#4D4D4D',
-    yellow:'#FFFAF3'
+    yellow:'#FFFAF3',
+    yellowBorder:'#F8EFEF',
+
 }

@@ -1,4 +1,5 @@
 const ImagePath= {
+    
     Home:require('../../Assets/Home.png'),
     Week_Prompt:require('../../Assets/Week_Prompt.png'),
     Group:require('../../Assets/Group.png'),
@@ -15,6 +16,8 @@ const ImagePath= {
     facilitatorProfile:require('../../Assets/facilitatorProfile.png'),
     vector:require('../../Assets/Vector.png'),
     backBtn:require('../../Assets/backBtn.png'),
+    chatGroup:require('../../Assets/chatGroup.png'),
+    splashScreen:require('../../Assets/SplashScreen.png'),
     //
   smile: require('../../Assets/smiling_face.png'),
   Line: require('../../Assets/Line.png'),

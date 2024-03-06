@@ -14,7 +14,7 @@ export default function PromptSection() {
     <View style={styles.container}>
       {values.map((value, index) => (
         <View key={index} style={styles.promptContainer}>
-          {console.log()}
+
           <Text style={[styles.promptText, { lineHeight: moderateScale(21) }]}>
             {value}
           </Text>

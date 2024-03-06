@@ -54,7 +54,7 @@ const Group = () => {
     },
   ]
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} >
       {/* Header */}
       <View style={styles.header}>
         <View><Text style={styles.headerText}>Your Group</Text></View>
@@ -84,19 +84,20 @@ const Group = () => {
         </View>
 
         <View style={styles.meetYourGroup}>
-          <View>
-            <Text style={styles.meetYourGroupTitle}>Meet Your Group</Text>
-          </View>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.scrollContainer}>
-            <View style={[styles.detailContainer, { flexDirection: 'row' }]}>
-              {imageData.map((data) => (
-                <View key={data.id} style={styles.imageContainer}>
-                  <Image source={data.image} style={styles.groupImage} />
-                </View>
-              ))}
-            </View>
-          </ScrollView>
+  <View>
+    <Text style={styles.meetYourGroupTitle}>Meet Your Group</Text>
+  </View>
+  <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.scrollContainer}>
+    <View style={styles.imageGroupContainer}>
+      {imageData.map((data) => (
+        <View key={data.id} style={styles.imageContainer}>
+          <Image source={data.image} style={styles.groupImage} />
         </View>
+      ))}
+    </View>
+  </ScrollView>
+</View>
+
       </View>
 
       <View style={styles.bottomContainer}>
@@ -104,7 +105,7 @@ const Group = () => {
           <Text style={styles.bottomText}>Need A Group Change <Image source={ImagePath.chevronRight} /></Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
     
   )
 }
@@ -133,10 +134,10 @@ const styles = StyleSheet.create({
     marginTop: moderateScale(16),
   },
   groupDetails: {
-    borderWidth: moderateScale(1),
+    borderWidth: moderateScale(2.2),
     padding: moderateScale(12),
     borderRadius: moderateScale(12),
-    borderColor: colors.grey,
+    borderColor: '#F8EFEF',
     marginHorizontal: moderateScale(16),
   },
   groupTitle: {
@@ -164,30 +165,37 @@ const styles = StyleSheet.create({
   facilitatorDetails: {
     flexDirection: 'row',
     padding: moderateScale(8),
+    borderColor:colors.grey,
+    marginTop:moderateScale(6),
   },
   detailContainer: {
-    borderWidth: moderateScale(1),
+    borderWidth: moderateScale(2.2),
+    //padding: moderateScale(12),
     borderRadius: moderateScale(12),
-    borderColor: colors.grey,
-    marginTop: moderateScale(10),
+    borderColor: '#F8EFEF',
+    //marginHorizontal: moderateScale(16),
+    marginTop: moderateScale(5),
   },
   facilitatorImage: {
-    height: moderateScale(30),
-    width: moderateScale(30),
-    marginLeft: moderateScale(8),
+    height: moderateScale(40),
+    width: moderateScale(40),
+    marginLeft: moderateScale(12),
     paddingVertical: moderateScale(5),
   },
   facilitatorText: {
-    fontSize: scale(16),
+    marginLeft:moderateScale(4),
+    fontSize: scale(20),
     fontWeight: '500',
     color: colors.black,
   },
   facilitatorDescription: {
     backgroundColor: colors.yellow,
-    margin: moderateScale(6),
+    margin: moderateScale(2),
     borderRadius: moderateScale(8),
     padding: moderateScale(6),
     margin: moderateScale(12),
+    borderColor:colors.yellowBorder,
+    borderWidth:moderateScale(2)
   },
   facilitatorBackground: {
     backgroundColor: colors.yellow,
@@ -196,7 +204,11 @@ const styles = StyleSheet.create({
   },
   facilitatorDescriptionText: {
     color: colors.black,
-    fontSize: scale(12),
+    fontSize: scale(13),
+  },
+  imageContainer: {
+    
+    marginTop: moderateScale(5),
   },
   meetYourGroup: {
     marginHorizontal: moderateScale(16),
@@ -207,8 +219,24 @@ const styles = StyleSheet.create({
     fontSize: scale(16),
     color: colors.grey,
   },
+  scrollContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  imageGroupContainer: {
+    borderWidth: moderateScale(2.2),
+    //padding: moderateScale(12),
+    borderRadius: moderateScale(12),
+    borderColor: '#F8EFEF',
+    height:moderateScale(100),
+    marginTop: moderateScale(5),
+    flexDirection:'row'
+  },
   groupImage: {
     borderRadius: moderateScale(12),
+    marginHorizontal:moderateScale(4),
+    height:90,
+    width:50,
   },
   bottomContainer: {
     flex: 1,

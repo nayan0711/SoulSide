@@ -13,6 +13,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import ImagePath from './Constants/ImagePath';
 import Btn from './components/btn/Btn';
 import ModalComponent from './components/modal/ModalComponent';
+import colors from './Constants/colors';
 
 export default function HomeScreen() {
   const handlePress = () => {
@@ -148,7 +149,7 @@ export default function HomeScreen() {
   };
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={[{flex: 1}, styles.mainContainer]}>
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.TopContainer}>
@@ -337,6 +338,9 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  mainContainer:{
+    backgroundColor:colors.white,
+  },
   container: {
     height: 199,
     backgroundColor: '#304F6D',
@@ -398,11 +402,10 @@ const styles = StyleSheet.create({
   },
 
   bgRectangle: {
-    width: 375,
     height: 274,
-    backgroundColor: '#FEF3E7',
+    backgroundColor: '#FFFAF3',
     borderRadius: 20,
-    marginLeft: 19,
+    marginHorizontal: 19,
     bottom: 189,
   },
   bgText: {
@@ -553,11 +556,10 @@ const styles = StyleSheet.create({
     height: 30,
   },
   weekPrompt: {
-    width: 381,
     height: 141,
     backgroundColor: '#4D4D4D',
     borderRadius: 20,
-    marginLeft: 16,
+    marginHorizontal: 16,
     position: 'relative',
   },
   CalendarImage: {
@@ -662,15 +664,15 @@ const styles = StyleSheet.create({
     left: 17,
   },
   heightContainer: {
-    height: 460,
+    height: 350,
   },
 
   friendRectangle: {
     height: 199,
-    backgroundColor: '#FEF3E7',
+    backgroundColor: '#FFFAF3',
     borderRadius: 10,
     marginHorizontal: 17,
-    bottom: 115,
+    bottom: 15,
   },
   referText: {
     color: '#304F6D',

@@ -42,13 +42,14 @@ const styles = StyleSheet.create({
   },
   head: {
     color: colors.grey,
-    fontWeight: '600',
-    fontSize: scale(12),
+    fontWeight: '800',
+    fontSize: scale(13),
   },
   description: {
-    fontFamily: 'Inter',
-    fontWeight: '500',
-    fontSize: scale(12),
+    marginTop:moderateScale(4),
+    
+    fontWeight: '600',
+    fontSize: scale(13),
     lineHeight: scale(16.8),
     color: '#666666',
   },
