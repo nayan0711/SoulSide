@@ -63,6 +63,7 @@ export const text = {
     SIX_GOING: '6 going',
     BY_AIMEE_WILLIAMS: 'By Aimée Williams',
     ADD_TO_CALENDAR: 'Add to Calendar',
+    CALENDER_URL:`https://calendar.google.com`,
     MARK_RSVP: 'Mark RSVP',
     MENTAL_WELLNESS_CHECKING: 'Mental wellness checking',
     GET_YOUR_MENTAL_WELLNESS_SCORE: 'Get your mental wellness score',

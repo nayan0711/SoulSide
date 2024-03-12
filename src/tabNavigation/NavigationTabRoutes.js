@@ -11,6 +11,8 @@ import ChatStack from '../stackNavigation/ChatStack';
 import { text } from '../constants/Strings';
 import { styles } from './Styles';
 import { getFocusedRouteNameFromRoute, useNavigation } from '@react-navigation/native';
+import Chat from '../chat/Chat';
+import Group from '../group/Group';
 const Tab = createMaterialTopTabNavigator();
 
 export default function App() {
@@ -64,7 +66,7 @@ export default function App() {
           />
           <Tab.Screen
             name={text.GROUP_SCREEN_NAME}
-            component={GroupStack}
+            component={Group}
             options={{
               tabBarIcon: ({ focused }) => (
                 <View style={[styles.tabIconContainer, focused && styles.focusedIcon]}>
@@ -79,7 +81,7 @@ export default function App() {
           />
           <Tab.Screen
             name={text.CHAT_SCREEN_NAME}
-            component={ChatStack}
+            component={Chat}
             options={{
               tabBarIcon: ({ focused }) => (
                 <View style={[styles.tabIconContainer, focused && styles.focusedIcon]}>

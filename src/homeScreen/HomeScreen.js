@@ -8,6 +8,7 @@ import {
   ScrollView,
   SafeAreaView,
   Share,
+  Linking,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import ImagePath from '../constants/ImagePath';
@@ -148,7 +149,11 @@ export default function HomeScreen() {
     left: 40,
     top: 85,
   };
-
+  const handleOpenGoogleCalendar = () => {
+  const url = text.CALENDER_URL;
+   Linking.openURL(`${url}`)
+  .catch((err) => console.error('Error opening email app:', err));
+  };
   return (
     <SafeAreaView style={[{ flex: 1 }, styles.mainContainer]}>
       <ScrollView>
@@ -249,7 +254,7 @@ export default function HomeScreen() {
           <View style={styles.btnContainer}>
             <Btn
               label={text.ADD_TO_CALENDAR}
-              onPress={handlePress}
+              onPress={()=>handleOpenGoogleCalendar()}
               textColor={'#304F6D'}
               style={styles.btn}
             />

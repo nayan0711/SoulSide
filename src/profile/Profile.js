@@ -49,16 +49,16 @@ const Profile = () => {
       'Would you like to take a photo or select one from your gallery?',
       [
         {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
           text: 'Take Photo',
           onPress: () => takePhoto(),
         },
         {
           text: 'Select from Gallery',
           onPress: () => selectImage(),
-        },
-        {
-          text: 'Cancel',
-          style: 'cancel',
         },
       ],
       { cancelable: true }

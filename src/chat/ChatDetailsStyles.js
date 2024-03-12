@@ -4,35 +4,36 @@ import { moderateScale } from 'react-native-size-matters'
 
 export const styles = StyleSheet.create({
   container: {
-      flex: 1,
-      backgroundColor: Colors.white,
+    flex: 1,
+    backgroundColor: Colors.white,
   },
   header: {
-      flexDirection: 'row',
-      marginTop:moderateScale(18),
-      marginBottom:moderateScale(14)
+    flexDirection: 'row',
+    marginTop: moderateScale(18),
+    marginBottom: moderateScale(14),
   },
-  backBtn:{
-      height:24,
-      marginTop:8,
-      marginLeft:moderateScale(14),
-      justifyContent:'center',
-      alignItems:'center'
+  backBtn: {
+    height: 24,
+    marginTop: 8,
+    marginLeft: moderateScale(14),
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   titleContainer: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems:'center'
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   title: {
-      color:Colors.black,
-      fontSize: moderateScale(22),
-      fontWeight: '600',
-      textAlign: 'center',
-      marginRight:moderateScale(26)
+    color: Colors.black,
+    fontSize: moderateScale(22),
+    fontWeight: '600',
+    textAlign: 'center',
+    marginRight: moderateScale(26),
   },
-  //
   messagesContainer: {
+    flex: 1,
+    backgroundColor: Colors.white,
     paddingHorizontal: 20,
     paddingBottom: 20,
   },
@@ -89,22 +90,24 @@ export const styles = StyleSheet.create({
     marginHorizontal: 8,
     color: Colors.black,
   },
-  chatContainer:{
-    marginHorizontal:15,
-  },
-  // 
-  messageInputContainer: {
+  chatContainer: {
     flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'flex-end',
+    backgroundColor: Colors.white,
+  },
+  messageInputContainer: {
+    borderTopWidth: 2,
+    borderTopColor: Colors.lightGrey,
+    padding: 14,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  inputFieldContainer:{
+    width:330
   },
   inputRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignSelf: 'stretch',
-    padding: 14,
-    borderTopWidth: 2,
-    borderColor: Colors.lightGrey,
   },
   attachmentContainer: {
     justifyContent: 'center',
@@ -119,12 +122,11 @@ export const styles = StyleSheet.create({
     backgroundColor: '#F3F6F6',
     padding: 10,
     borderRadius: 8,
-    width: 300,
+    flex: 1,
   },
   sendButtonContainer: {},
   sendButtonIcon: {
     height: 45,
     width: 45,
-  },
-    
+  },  
 })

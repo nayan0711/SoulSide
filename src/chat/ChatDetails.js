@@ -8,14 +8,29 @@ import Colors from '../constants/Colors';
 const dummyMessages = [
   { id: '4', sender: 'Charlie', text: 'Hello everyone!' },
   { id: '5', sender: 'Alice', text: 'Nice to see you, Charlie!' },
-  
-  
- 
 ];
 
 export default function ChatDetails() {
   const navigation = useNavigation();
-  
+  const [inputValue, setInputValue] = useState('');
+
+  const handleTextChange = (text) => {
+    setInputValue(text);
+  };
+  const handleSendMessage = () => {
+    if (inputValue.trim() !== '') {
+      const newMessage = {
+        id: (dummyMessages.length +4 ).toString(),
+        sender: 'Alice',
+        text: inputValue,
+      };
+
+      dummyMessages.push(newMessage);
+      setInputValue('');
+    } else {
+      Alert.alert('Error', 'Please enter a message.');
+    }
+  };
   const renderMessage = ({ item }) => (
     (item.sender == 'Alice') ?
     <View>
@@ -67,29 +82,30 @@ export default function ChatDetails() {
 
     </View>
       
-
+    
     <View style={styles.messageInputContainer}>
-  <View style={styles.inputRow}>
-    <View style={styles.attachmentContainer}>
-      <Image source={ImagePath.attachment} style={styles.attachmentIcon} />
+        <View style={styles.inputRow}>
+          <View style={styles.attachmentContainer}>
+            <Image source={ImagePath.attachment} style={styles.attachmentIcon} />
+          </View>
+          <View style={styles.inputFieldContainer}>
+            <TextInput
+              placeholder="Write your message"
+              placeholderTextColor="#999999"
+              style={styles.inputField}
+              value={inputValue}
+              onChangeText={handleTextChange}
+            />
+          </View>
+          <View style={styles.sendButtonContainer}>
+            <TouchableOpacity onPress={handleSendMessage}>
+              <Image source={ImagePath.send} style={styles.sendButtonIcon} />
+            </TouchableOpacity>
+          </View>
+        </View>
     </View>
-    <View>
-      <TextInput
-        placeholder="Write your message"
-        placeholderTextColor="#999999"
-        style={styles.inputField}
-      />
-    </View>
-    <View style={styles.sendButtonContainer}>
-      <TouchableOpacity>
-        <Image source={ImagePath.send} style={styles.sendButtonIcon} />
-      </TouchableOpacity>
-    </View>
-  </View>
-</View>
-
-
-
     </View>
   );
 }
+
+

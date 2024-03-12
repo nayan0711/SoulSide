@@ -6,8 +6,10 @@ import NavigationTabRoutes from '../tabNavigation/NavigationTabRoutes';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import ImagePath from '../constants/ImagePath';
 import { text } from '../constants/Strings';
-const Stack = createStackNavigator();
+import GroupGuidlines from '../group/GroupGuidlines';
+import ChatDetails from '../chat/ChatDetails';
 
+const Stack = createStackNavigator();
 const SplashScreenComponent = () => (
   <View style={{ flex: 1 }}>
     <ImageBackground source={ImagePath.splashScreen} style={{ flex: 1 }} />
@@ -61,6 +63,8 @@ const LoginStack = () => {
       }}>
       <Stack.Screen name={text.LOGIN_SCREEN_NAME} component={Login} />
       <Stack.Screen name={text.MAIN_SCREEN_NAME} component={NavigationTabRoutes} />
+      <Stack.Screen name={text.GROUP_GUIDELINES_SCREEN_NAME} component={GroupGuidlines}/>
+      <Stack.Screen name={text.CHAT_DETAILS_SCREEN_NAME} component={ChatDetails} />
     </Stack.Navigator>
   );
 };
