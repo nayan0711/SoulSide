@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Alert, Image, Text, View, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -19,10 +18,21 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const [load, isLoading] = useState(false);
+  const [name, setName] = useState('');
 
   const isValidEmail = (email) => {
     const expression = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
     return expression.test(email);
+  };
+
+  const getNameFromEmail = (email) => {
+    const atIndex = email.indexOf('@');
+    if (atIndex !== -1) {
+      const namePart = email.substring(0, atIndex);
+      return namePart;
+    } else {
+      return '';
+    }
   };
 
   const handleLogin = async () => {
@@ -39,9 +49,11 @@ const Login = () => {
           email: email,
           password: pass,
         });
-
+        console.log(response);
         if (response.status === 200 && response.data.token) {
           await AsyncStorage.setItem('token', response.data.token);
+          const extractedName = getNameFromEmail(email);
+          await AsyncStorage.setItem('firstName', extractedName); // Store first name
           console.log(text.LOGIN_SUCCESS_MESSAGE);
           console.log(response.data.token);
           navigation.navigate('Main');
@@ -56,31 +68,38 @@ const Login = () => {
       }
     }
   };
+
+  const handleEmailChange = (text) => {
+    setEmail(text);
+    const extractedName = getNameFromEmail(text);
+    setName(extractedName);
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
-    <View style={styles.header}>
-      <Image source={ImagePath.loginImg} style={styles.headerText} />
-    </View>
-    <View style={styles.signInContainer}>
-      <View style={styles.signInTextContainer}>
-        <Text style={styles.signInText}>Sign In to continue</Text>
+      <View style={styles.header}>
+        <Image source={ImagePath.loginImg} style={styles.headerText} />
       </View>
-      <InputField
-        placeholder={'Text@gmail.com'}
-        onChangeText={(text) => setEmail(text)}
-        keyboardType={'email-address'}
-      />
-      <InputField
-        secureTextEntry={isVisible}
-        placeholder={'Password'}
-        onChangeText={(text) => setPass(text)}
-        rightIcon={isVisible ? ImagePath.hideEye : ImagePath.showEye}
-        onPress={() => setVisible(!isVisible)}
-      />
-      <CustomBtn label={'Login'} onPress={handleLogin} />
-      <ActivityIndicator animating={load} />
-    </View>
-  </SafeAreaView>
+      <View style={styles.signInContainer}>
+        <View style={styles.signInTextContainer}>
+          <Text style={styles.signInText}>Sign In to continue</Text>
+        </View>
+        <InputField
+          placeholder={'Text@gmail.com'}
+          onChangeText={handleEmailChange}
+          keyboardType={'email-address'}
+        />
+        <InputField
+          secureTextEntry={isVisible}
+          placeholder={'Password'}
+          onChangeText={(text) => setPass(text)}
+          rightIcon={isVisible ? ImagePath.hideEye : ImagePath.showEye}
+          onPress={() => setVisible(!isVisible)}
+        />
+        <CustomBtn label={'Login'} onPress={handleLogin} />
+        <ActivityIndicator animating={load} />
+      </View>
+    </SafeAreaView>
   );
 }
 

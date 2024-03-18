@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
     marginRight: moderateScale(26),
   },
   messagesContainer: {
-    flex: 1,
+    flexGrow: 1,
     backgroundColor: Colors.white,
     paddingHorizontal: 20,
     paddingBottom: 20,
@@ -102,11 +102,12 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   inputFieldContainer:{
-    width:330
+    width:moderateScale(270),
+    marginHorizontal:6
   },
   inputRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
     alignSelf: 'stretch',
   },
   attachmentContainer: {

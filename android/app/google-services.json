@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "493023955372",
+    "project_id": "soulside-d1d7c",
+    "storage_bucket": "soulside-d1d7c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493023955372:android:ed98845491f6f86bbd1209",
+        "android_client_info": {
+          "package_name": "com.soulside"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdSOyjORee_Z-WfmThMHWyHsAAJc3d9ak"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
