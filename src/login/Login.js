@@ -84,6 +84,7 @@ const Login = () => {
         <View style={styles.signInTextContainer}>
           <Text style={styles.signInText}>Sign In to continue</Text>
         </View>
+        <View style={styles.adjust}>
         <InputField
           placeholder={'Text@gmail.com'}
           onChangeText={handleEmailChange}
@@ -98,6 +99,7 @@ const Login = () => {
         />
         <CustomBtn label={'Login'} onPress={handleLogin} />
         <ActivityIndicator animating={load} />
+        </View>
       </View>
     </SafeAreaView>
   );

@@ -5,7 +5,7 @@ import { moderateScale, scale } from 'react-native-size-matters';
 export const styles = StyleSheet.create({
     container: {
       flex: 1,
-      marginHorizontal:4
+      //marginHorizontal:4
     },
     header: {
       backgroundColor: colors.themeColor,
@@ -42,9 +42,9 @@ export const styles = StyleSheet.create({
     cameraIcon: {
       position: 'absolute',
       top: moderateScale(-25),
-      left: moderateScale(20),
-      height: moderateScale(30),
-      width: moderateScale(30),
+      left: moderateScale(60),
+      height: moderateScale(35),
+      width: moderateScale(35),
     },
     userName: {
       color: colors.white,
@@ -54,6 +54,7 @@ export const styles = StyleSheet.create({
     scrollView: {
       flexGrow: 1,
       backgroundColor: colors.white,
+      marginHorizontal:4
     },
     inputContainer: {
       marginHorizontal: moderateScale(14),
@@ -104,6 +105,42 @@ export const styles = StyleSheet.create({
     iconRight: {
       height: scale(18),
       width: scale(18),
+    },
+    modalContainer: {
+      flex: 1,
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+    },
+    modalContent: {
+      width: '100%',
+      backgroundColor: colors.white,
+      borderRadius: 10,
+      padding: 20,
+    },
+    modalText: {
+      fontSize: 18,
+      fontWeight: 'bold',
+      marginBottom: 30,
+      textAlign: 'center',
+      color:colors.grey
+    },
+    modalButtonsContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
+    modalButton: {
+      flex: 1,
+      backgroundColor: colors.themeColor,
+      borderRadius: 5,
+      padding: 10,
+      marginHorizontal: 5,
+    },
+    modalButtonText: {
+      color: colors.white,
+      textAlign: 'center',
+      fontSize: 16,
+      fontWeight: 'bold',
     },
   });
   

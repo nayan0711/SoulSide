@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Modal, Image, Text} from 'react-native';
 import {styles} from './styles';
 import Btn from '../btn/Btn';
+import Colors from '../../constants/Colors';
 
 const ModalComponent = ({
   isVisible,
@@ -28,7 +29,7 @@ const ModalComponent = ({
   contentTxt,
   letsButton,
   letsButtonStyle,
-  letsBtntxtStyle,
+  letsBtntxtStyle=Colors.black,
 }) => {
   return (
     <View style={styles.container}>

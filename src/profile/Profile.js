@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, Alert } from 'react-native';
-import CustomBtn from '../components/customBtn/CustomBtn';
+import { View, Text, Image, TouchableOpacity, StyleSheet, Alert, Modal } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import ImagePath from '../constants/ImagePath';
@@ -12,9 +11,20 @@ import {styles} from './Styles'
 const Profile = () => {
   const navigation = useNavigation();
   const [selectedImage, setSelectedImage] = useState(null); 
+  const [name, setName] = useState('');
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
 
   useEffect(() => {
     retrieveSelectedImage();
+    const getName = async () => {
+      try {
+        const storedName = await AsyncStorage.getItem('firstName');
+        setName(storedName);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+    getName();
   }, []);
 
   const retrieveSelectedImage = async () => {
@@ -37,10 +47,15 @@ const Profile = () => {
   };
 
   const handleLogout = async () => {
-    const token=await AsyncStorage.getItem('token');
+    const token = await AsyncStorage.getItem('token');
     await AsyncStorage.removeItem('token');
+    await AsyncStorage.removeItem('firstName');
     console.log(token);
     navigation.navigate('Login');
+  };
+
+  const handleShowLogoutModal = () => {
+    setShowLogoutModal(!showLogoutModal);
   };
 
   const showImagePickerOptions = () => {
@@ -93,22 +108,27 @@ const Profile = () => {
     <View style={styles.header}>
       <View style={styles.headerContainer}>
         <Text style={styles.title}>{text.TITLE}</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleShowLogoutModal}>
           <Image source={ImagePath.More} style={styles.icon} />
         </TouchableOpacity>
       </View>
       <View style={styles.profileImageContainer}>
+      <TouchableOpacity onPress={() => showImagePickerOptions()}>
+      
         <View>
           <Image source={selectedImage ? { uri: selectedImage } : require('../../assets/profilePhoto.png')} style={styles.profileImage} />
         </View>
+        
         <View>
-          <TouchableOpacity onPress={() => showImagePickerOptions()}>
             <Image source={ImagePath.cameraIcon} style={styles.cameraIcon} />
-          </TouchableOpacity>
+          
         </View>
+        </TouchableOpacity>
+
         <View>
-          <Text style={styles.userName}>Jhon Abraham</Text>
+          <Text style={styles.userName}>{name}</Text>
         </View>
+
       </View>
     </View>
 
@@ -169,10 +189,27 @@ const Profile = () => {
           isdate={true}
         />
       </View>
-
-      <View style={{ alignItems: 'center' }}>
-        <CustomBtn label={text.LOGOUT} onPress={handleLogout} />
-      </View>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={showLogoutModal}
+        onRequestClose={() => setShowLogoutModal(false)}
+      >
+        <View style={styles.modalContainer}>
+          <View style={[styles.modalContent, { height: '30%' }]}>
+            <Text style={styles.modalText}>Are you sure you want to logout?</Text>
+            <View style={styles.modalButtonsContainer}>
+              <TouchableOpacity style={styles.modalButton} onPress={handleLogout}>
+                <Text style={styles.modalButtonText}>Logout</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.modalButton} onPress={() => setShowLogoutModal(false)}>
+                <Text style={styles.modalButtonText}>Cancel</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
+     
     </ScrollView>
   </View>
   );

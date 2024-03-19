@@ -26,7 +26,7 @@
     "react-native-calendar-events": "^2.2.0",
     "react-native-datepicker": "^1.7.2",
     "react-native-gesture-handler": "^2.15.0",
-    "react-native-image-picker": "^7.1.0",
+    "react-native-image-picker": "^7.1.1",
     "react-native-linear-gradient": "^2.8.3",
     "react-native-modal-datetime-picker": "^17.1.0",
     "react-native-pager-view": "^6.2.3",

@@ -24,6 +24,10 @@ const styles = StyleSheet.create({
       borderTopRightRadius: moderateScale(20),
       paddingHorizontal: moderateScale(20),
       paddingTop: moderateScale(20),
+      
+    },
+    adjust:{
+      left:-5
     },
     signInTextContainer: {
       justifyContent: 'center',

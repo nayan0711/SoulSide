@@ -539,6 +539,8 @@ const styles = StyleSheet.create({
     marginHorizontal:5,
   },
   yogaImage: {
+    marginHorizontal:7,
+    marginTop:5,
     padding:20,
     height: 70,
     width: 60,
