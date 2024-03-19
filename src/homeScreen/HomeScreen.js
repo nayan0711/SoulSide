@@ -9,6 +9,7 @@ import {
   SafeAreaView,
   Share,
   Linking,
+  Dimensions
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import ImagePath from '../constants/ImagePath';
@@ -17,6 +18,7 @@ import ModalComponent from '../components/modal/ModalComponent';
 import colors from '../constants/Colors';
 import { text } from '../constants/Strings';
 
+const { width, height } = Dimensions.get('window');
 export default function HomeScreen() {
   const handlePress = () => {
     console.log('Add to calendar');
@@ -278,10 +280,7 @@ export default function HomeScreen() {
               <Text style={styles.boxText2}>
                 {text.GET_YOUR_MENTAL_WELLNESS_SCORE_FOR_THE_WEEK}
               </Text>
-              <Image
-                source={ImagePath.Chevron}
-                style={styles.rightImage}></Image>
-            </View>
+          </View>
           </View>
         </View>
         <View style={styles.weekPrompt}>
@@ -342,10 +341,14 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   mainContainer: {
+    flex: 1,
     backgroundColor: colors.white,
   },
+  scrollViewContainer: {
+    flexGrow: 1,
+  },
   container: {
-    height: 199,
+    height: height * 0.3,
     backgroundColor: '#304F6D',
     borderBottomLeftRadius: 30,
     borderBottomRightRadius: 30,
@@ -368,7 +371,7 @@ const styles = StyleSheet.create({
     fontWeight: '800',
   },
   imageformkit: {
-    left: 228,
+    left: 200,
     height: 30,
     width: 30,
   },
@@ -422,6 +425,7 @@ const styles = StyleSheet.create({
     letterSpacing: 2,
     left: 15,
     top: 20,
+    color:colors.grey,
   },
 
   imageTag: {
@@ -440,7 +444,7 @@ const styles = StyleSheet.create({
     paddingLeft: 2,
     height: 25,
     width: 25,
-    top: 0,
+    left: -27,
   },
   iImage: {
     zIndex: 6,
@@ -452,6 +456,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     left: 19,
     bottom: 60,
+    color:colors.grey,
   },
   bgText3: {
     fontWeight: '400',
@@ -490,7 +495,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'absolute',
     bottom: 60,
-    right: 210,
+    right: 190,
   },
   images: {
     position: 'relative',
@@ -524,17 +529,19 @@ const styles = StyleSheet.create({
     color: '#4D4D4D',
   },
   borderBox: {
-    width: 380,
+    width: 350,
     height: 84,
     top: 90,
     borderRadius: 10,
     borderWidth: 2,
     borderColor: '#F8EFEF',
     right: 4,
+    marginHorizontal:5,
   },
   yogaImage: {
-    height: 80,
-    width: 69,
+    padding:20,
+    height: 70,
+    width: 60,
   },
   insideText: {
     left: 74,

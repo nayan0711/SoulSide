@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native'
 import colors from '../constants/Colors'
 import { moderateScale, scale } from 'react-native-size-matters'
+import Colors from '../constants/Colors'
 
 export const styles = StyleSheet.create({
     container: {
@@ -59,6 +60,7 @@ export const styles = StyleSheet.create({
         fontSize: scale(14),
         fontWeight:'600',
         marginRight:moderateScale(12),
+        color:Colors.grey,
     },
     bottomContainer: {
         flex: 1,
@@ -66,7 +68,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: colors.yellow,
         paddingBottom: 20,
-        height: moderateScale(24),
+        height: moderateScale(20),
         marginTop: moderateScale(70),
     },
     bottomText: {
@@ -74,6 +76,7 @@ export const styles = StyleSheet.create({
         fontWeight: '600',
         textAlign: 'center',
         marginHorizontal: 14,
+        color:Colors.grey,
     },
     emailText: {
         fontWeight: '900',

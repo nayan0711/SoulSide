@@ -131,7 +131,7 @@ const ChatDetails = () => {
           <View style={styles.inputFieldContainer}>
             <TextInput
               placeholder="Write your message"
-              placeholderTextColor="#999999"
+              placeholderTextColor={Colors.black}
               style={styles.inputField}
               value={inputValue}
               onChangeText={handleTextChange}

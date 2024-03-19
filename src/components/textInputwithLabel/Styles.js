@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     label: {
       fontSize: scale(14),
       marginLeft:moderateScale(2),
+      color:Colors.black,
     },
     inputStyle: {
       color:Colors.black,
@@ -20,6 +21,7 @@ export const styles = StyleSheet.create({
       fontSize: scale(14),
       fontWeight:'400',
       color:Colors.black,
+      
     },
     inputViewStyle: {
       flexDirection: 'row', 

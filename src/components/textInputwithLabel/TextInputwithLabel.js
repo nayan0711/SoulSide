@@ -3,6 +3,7 @@ import {Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 
 import {styles} from './Styles'
+import Colors from '../../constants/Colors';
 export default function TextInputWithLabel({ 
   label,
   placeholder, 
@@ -43,6 +44,7 @@ export default function TextInputWithLabel({
                 style={styles.inlineStyle}
                 value={selectedDate ? selectedDate.toDateString() : ''}
                 editable={false}
+                placeholderTextColor={Colors.black}
               />
             </TouchableOpacity>
             <DateTimePickerModal
@@ -59,7 +61,9 @@ export default function TextInputWithLabel({
             keyboardType={props.keyboardType || 'default'}
             secureTextEntry={secureTextEntry}
             onChangeText={onChangeText}
+            placeholderTextColor={Colors.black}
             {...props}
+
           />
         )}
 

@@ -65,7 +65,7 @@ export const text = {
     ADD_TO_CALENDAR: 'Add to Calendar',
     CALENDER_URL:`https://calendar.google.com`,
     MARK_RSVP: 'Mark RSVP',
-    MENTAL_WELLNESS_CHECKING: 'Mental wellness checking',
+    MENTAL_WELLNESS_CHECKING: 'Mental Wellness Checking',
     GET_YOUR_MENTAL_WELLNESS_SCORE: 'Get your mental wellness score',
     GET_YOUR_MENTAL_WELLNESS_SCORE_FOR_THE_WEEK: 'Get your mental wellness score for the week',
     THURSDAY_UPCOMING_SESSION: 'Thursday-Upcoming Session',

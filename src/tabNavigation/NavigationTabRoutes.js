@@ -48,6 +48,7 @@ export default function App() {
                   />
                 </View>
               ),
+              tabBarLabelStyle: {fontSize: 12},
             }}
           />
           <Tab.Screen
@@ -62,6 +63,7 @@ export default function App() {
                   />
                 </View>
               ),
+              tabBarLabelStyle: {fontSize: 11},
             }}
           />
           <Tab.Screen
@@ -76,7 +78,7 @@ export default function App() {
                   />
                 </View>
               ),
-              
+              tabBarLabelStyle: {fontSize: 12},
             }}
           />
           <Tab.Screen
@@ -91,6 +93,7 @@ export default function App() {
                   />
                 </View>
               ),
+              tabBarLabelStyle: {fontSize: 12},
             }}
           />
           <Tab.Screen
@@ -105,6 +108,7 @@ export default function App() {
                   />
                 </View>
               ),
+              tabBarLabelStyle: {fontSize: 12},
             }}
           />
         </Tab.Navigator>

@@ -5,6 +5,7 @@ import { moderateScale, scale } from 'react-native-size-matters';
 export const styles = StyleSheet.create({
     container: {
       flex: 1,
+      marginHorizontal:4
     },
     header: {
       backgroundColor: colors.themeColor,
@@ -12,7 +13,7 @@ export const styles = StyleSheet.create({
     headerContainer: {
       height: moderateScale(150),
       marginTop: moderateScale(18),
-      marginHorizontal:moderateScale(6),
+      //marginHorizontal:moderateScale(2),
       flexDirection: 'row',
       justifyContent: 'space-between',
     },
@@ -55,20 +56,20 @@ export const styles = StyleSheet.create({
       backgroundColor: colors.white,
     },
     inputContainer: {
-      marginHorizontal: moderateScale(8),
+      marginHorizontal: moderateScale(14),
     },
     shadowContainer: {
       backgroundColor: colors.white,
       marginTop: moderateScale(-30),
     },
     shadowBox: {
-      top:moderateScale(-30),
+      top:moderateScale(-36),
       marginHorizontal: moderateScale(16),
       borderRadius: moderateScale(8),
       shadowColor: '#000',
       shadowOffset: {
         width: 0,
-        height: 2,
+        height: 4,
       },
       shadowOpacity: 0.25,
       shadowRadius: 3.84,
@@ -101,8 +102,8 @@ export const styles = StyleSheet.create({
       marginRight: moderateScale(5),
     },
     iconRight: {
-      height: scale(12),
-      width: scale(12),
+      height: scale(18),
+      width: scale(18),
     },
   });
   

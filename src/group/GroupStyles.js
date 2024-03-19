@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 import { moderateScale, scale } from 'react-native-size-matters';
 import colors from '../constants/Colors';
+import Colors from "../constants/Colors";
 
 export const styles = StyleSheet.create({
     container: {
@@ -42,6 +43,7 @@ export const styles = StyleSheet.create({
       color: colors.black,
     },
     description: {
+      color:Colors.black,
       marginVertical: moderateScale(6),
     },
     facilitatorContainer: {

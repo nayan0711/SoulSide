@@ -124,6 +124,7 @@ export const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 8,
     flex: 1,
+    color:Colors.black,
   },
   sendButtonContainer: {},
   sendButtonIcon: {
