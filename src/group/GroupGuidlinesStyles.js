@@ -67,9 +67,9 @@ export const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center',
         backgroundColor: colors.yellow,
-        paddingBottom: 20,
-        height: moderateScale(20),
-        marginTop: moderateScale(70),
+        paddingBottom: 30,
+        height: moderateScale(10),
+        marginTop: moderateScale(140),
     },
     bottomText: {
         fontSize: 16,

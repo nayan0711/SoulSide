@@ -8,6 +8,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 import { text } from '../constants/Strings';
 import {styles} from './Styles'
+import { request, PERMISSIONS } from 'react-native-permissions';
 const Profile = () => {
   const navigation = useNavigation();
   const [selectedImage, setSelectedImage] = useState(null); 
@@ -26,6 +27,11 @@ const Profile = () => {
     };
     getName();
   }, []);
+
+  const askForPermissions=(permissions)=>{
+    request(permissions).then(request =>{
+    })
+  }
 
   const retrieveSelectedImage = async () => {
     try {
@@ -59,6 +65,7 @@ const Profile = () => {
   };
 
   const showImagePickerOptions = () => {
+    askForPermissions(PERMISSIONS.ANDROID.CAMERA);
     Alert.alert(
       'Choose Image Source',
       'Would you like to take a photo or select one from your gallery?',
@@ -103,6 +110,7 @@ const Profile = () => {
       }
     });
   };    
+  
   return (
     <View style={styles.container}>
     <View style={styles.header}>
