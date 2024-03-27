@@ -124,7 +124,7 @@ const Profile = () => {
       <TouchableOpacity onPress={() => showImagePickerOptions()}>
       
         <View>
-          <Image source={selectedImage ? { uri: selectedImage } : require('../../assets/profilePhoto.png')} style={styles.profileImage} />
+          <Image source={selectedImage ? { uri: selectedImage } : require('../../Assets/profilePhoto.png')} style={styles.profileImage} />
         </View>
         
         <View>

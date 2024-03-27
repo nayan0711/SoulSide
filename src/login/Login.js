@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Alert, Image, Text, View, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import InputField from '../components/customInputField/InputField';
@@ -20,6 +20,10 @@ const Login = () => {
   const [load, isLoading] = useState(false);
   const [name, setName] = useState('');
 
+  useEffect(()=>{
+    setEmail('')
+    setPass('')
+  },[])
   const isValidEmail = (email) => {
     const expression = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
     return expression.test(email);

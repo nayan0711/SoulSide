@@ -11,46 +11,46 @@ const Group = () => {
   const imageData = [
     {
       id:1,
-      image: require('../../assets/Frame1.png')
+      image: require('../../Assets/Frame1.png')
     },
     {
       id:2,
-      image: require('../../assets/Frame2.png'),
+      image: require('../../Assets/Frame2.png'),
     },
     {
       id:3,
-      image: require('../../assets/Frame3.png'),
+      image: require('../../Assets/Frame3.png'),
     },
     {
       id:4,
-      image: require('../../assets/Frame4.png'),
+      image: require('../../Assets/Frame4.png'),
     },
     {
       id:5,
-      image: require('../../assets/Frame5.png'),
+      image: require('../../Assets/Frame5.png'),
     },
     {
       id:6,
-      image: require('../../assets/Frame6.png'),
+      image: require('../../Assets/Frame6.png'),
     },
     {
       id:7,
-      image: require('../../assets/Frame6.png'),
+      image: require('../../Assets/Frame6.png'),
     }, {
       id:8,
-      image: require('../../assets/Frame6.png'),
+      image: require('../../Assets/Frame6.png'),
     }, {
       id:9,
-      image: require('../../assets/Frame6.png'),
+      image: require('../../Assets/Frame6.png'),
     }, {
       id:10,
-      image: require('../../assets/Frame6.png'),
+      image: require('../../Assets/Frame6.png'),
     }, {
       id:11,
-      image: require('../../assets/Frame6.png'),
+      image: require('../../Assets/Frame6.png'),
     }, {
       id:12,
-      image: require('../../assets/Frame6.png'),
+      image: require('../../Assets/Frame6.png'),
     },
   ]
   return (
